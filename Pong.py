@@ -49,7 +49,8 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player 1: 0 Payer 2: 0", align="center", font=("Courier", 24, "normal"))
+# pen.write("EPIC PONG 2020!!", align="", font=("Courier", 24, "normal"))
+pen.write("Player 1: 0 Payer 2: 0", align="center", font=("Courier", 18, "normal"))
 
 
 
@@ -99,12 +100,12 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        # winsound.PlaySound("Ping-pong-ball-bounce-sound-effect.mp3", winsound.SND_ASYNC)
+        winsound.Beep(37, 3)
     
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        # winsound.PlaySound("Ping-pong-ball-bounce-sound-effect.mp3", winsound.SND_ASYNC)
+        winsound.Beep(37, 3)
 
     if ball.xcor() > 390:
         ball.goto(0, 0)
@@ -124,10 +125,10 @@ while True:
     if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() < player_2.ycor() + 40 and ball.ycor() > player_2.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
-        # winsound.PlaySound("Ping-pong-ball-bounce-sound-effect.mp3", winsound.SND_ASYNC)
+        winsound.Beep(6000, 200)
 
     if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() < player_1.ycor() + 40 and ball.ycor() > player_1.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
-        # winsound.PlaySound("Ping-pong-ball-bounce-sound-effect.mp3", winsound.SND_ASYNC)
+        winsound.Beep(4000, 200)
 
