@@ -122,13 +122,16 @@ while True:
         pen.write("Player 1: {} Payer 2: {}".format(score_1, score_2), align="center", font=("Courier", 24, "normal"))
 
     # When the ball hits a players paddle
+
     if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() < player_2.ycor() + 40 and ball.ycor() > player_2.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
-        winsound.Beep(6000, 200)
+        winsound.Beep(4000, 200)  
+        (winsound.SND_ASYNC)
 
     if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() < player_1.ycor() + 40 and ball.ycor() > player_1.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
-        winsound.Beep(4000, 200)
+        winsound.Beep(2000, 200)  
+        (winsound.SND_ASYNC)
 
