@@ -10,7 +10,7 @@ win.bgcolor("black")
 win.setup(width=800, height=600)
 win.tracer(0)
 
-# Score
+# Score starting at zero
 score_1 = 0
 score_2 = 0
 
@@ -79,7 +79,7 @@ def player_2_down():
     player_2.sety(y)
 
 
-# Keyboard bindings
+# keyboard controlls
 
 win.listen()
 win.onkeypress(player_1_up, "w")
@@ -87,15 +87,15 @@ win.onkeypress(player_1_down, "s")
 win.onkeypress(player_2_up, "Up")
 win.onkeypress(player_2_down, "Down")
 
-# Main game
+# Main game loop
 while True:
     win.update()
     
-    # Moving the ball
+    # Ball movement
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
-    # Boarder contact
+    # When the ball hits a border
 
     if ball.ycor() > 290:
         ball.sety(290)
@@ -121,7 +121,7 @@ while True:
         pen.clear()
         pen.write("Player 1: {} Payer 2: {}".format(score_1, score_2), align="center", font=("Courier", 24, "normal"))
 
-    # Paddles hit the ball
+    # When the ball hits a players paddle
     if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() < player_2.ycor() + 40 and ball.ycor() > player_2.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
